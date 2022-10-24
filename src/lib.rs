@@ -5,9 +5,9 @@ pub mod space;
 
 pub const NUM_COL: isize = 200;
 pub const NUM_ROW: isize = 50;
-pub const VERTICAL_LENGTH: f64 = 4.;
-pub const HORIZONTAL_LENGTH: f64 = 2.;
-pub const POV: f64 = 4.;
+pub const VERTICAL_LENGTH: f64 = 24.;
+pub const HORIZONTAL_LENGTH: f64 = 12.;
+pub const POV: f64 = 10.;
 
 #[cfg(test)]
 

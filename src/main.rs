@@ -30,17 +30,19 @@ fn main() {
     loop {
         let delta = start.elapsed();
         start = Instant::now();
-        let rotation_matrix =
+        let rotation_matrix_x =
             RotationMatrix::new(RotationAngle::X, delta.as_secs_f64() * (PI / 4.));
-        cube.rotate(&rotation_matrix);
+        let rotation_matrix_y =
+            RotationMatrix::new(RotationAngle::Z, delta.as_secs_f64() * (PI / 5.));
+        cube.rotate(&(&rotation_matrix_x * &rotation_matrix_y));
         space.create_new_frame();
         for p in cube.vertices {
             let projected_point = p.from_pespective(&space.pov);
             space.render_point(projected_point);
         }
-        thread::sleep(time::Duration::from_millis(100));
         clear_screen();
         space.render_frame();
+        thread::sleep(time::Duration::from_millis(20));
     }
 }
 enum Drawable {
