@@ -1,12 +1,13 @@
 pub mod cube;
-pub mod edge;
 pub mod point;
+pub mod rotation_matrix;
 pub mod space;
 
-pub const NUM_COL: isize = 180;
-pub const NUM_ROW: isize = 45;
-pub const VERTICAL_LENGTH: isize = 10;
-pub const HORIZONTAL_LENGTH: isize = 5;
+pub const NUM_COL: isize = 200;
+pub const NUM_ROW: isize = 50;
+pub const VERTICAL_LENGTH: f64 = 4.;
+pub const HORIZONTAL_LENGTH: f64 = 2.;
+pub const POV: f64 = 4.;
 
 #[cfg(test)]
 

@@ -12,16 +12,6 @@ impl Point {
         Point { x, y, z }
     }
 
-    pub fn rotate(&mut self, matrix: [[f64; 3]; 3]) {
-        let new_x = matrix[0][0] * self.x + matrix[0][1] * self.y + matrix[0][2] * self.z;
-        let new_y = matrix[1][0] * self.x + matrix[1][1] * self.y + matrix[1][2] * self.z;
-        let new_z = matrix[2][0] * self.x + matrix[2][1] * self.y + matrix[2][2] * self.z;
-
-        self.x = new_x;
-        self.y = new_y;
-        self.z = new_z;
-    }
-
     pub fn from_pespective(&self, perspective_point: &Point) -> Point {
         let projected_self: Point = self.project_onto(perspective_point);
 
@@ -85,7 +75,7 @@ impl Point {
         }
     }
 
-    pub fn space_to_frame(self) -> (f64, f64) {
+    pub fn space_to_plane(self) -> (f64, f64) {
         (self.x, self.y)
     }
 }
