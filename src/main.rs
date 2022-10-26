@@ -45,13 +45,6 @@ fn main() {
         thread::sleep(time::Duration::from_millis(20));
     }
 }
-enum Drawable {
-    HorizontalEdge,    // -
-    VerticalEdge,      // |
-    LeftDiagonalEdge,  // /
-    RightDiagonalEdge, // \
-    Vertex,            // +
-}
 
 fn clear_screen() {
     print!("{}[2J", 27 as char);
