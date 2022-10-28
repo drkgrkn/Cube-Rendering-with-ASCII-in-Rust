@@ -42,7 +42,7 @@ fn main() {
         }
         clear_screen();
         space.render_frame();
-        thread::sleep(time::Duration::from_millis(20));
+        thread::sleep(time::Duration::from_millis(1000 / 120));
     }
 }
 

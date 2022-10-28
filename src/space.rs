@@ -30,12 +30,13 @@ impl Space {
     }
 
     pub fn render_frame(&self) {
+        let mut output: String = ' '.to_string();
         for row in &self.frame {
-            for c in row {
-                print!("{}", c);
-            }
-            print!("\n");
+            //println!("{}", row.into_iter().collect::<String>());
+            output.push_str(row.into_iter().collect::<String>().as_str());
+            output.push_str("\n");
         }
+        print!("{}", output);
     }
 
     pub fn render_point(&mut self, point: Point) {
@@ -44,7 +45,7 @@ impl Space {
         let int_coord = self.plane_to_frame(coord);
 
         self.frame[(self.origin.0 + int_coord.0) as usize][(self.origin.1 + int_coord.1) as usize] =
-            '+'
+            '⬜'
     }
 
     pub fn plane_to_frame(&self, p: (f64, f64)) -> (isize, isize) {
